@@ -19,7 +19,7 @@ Minimal template for a web service:
 
 This will start up the database and app containers, logging to stdout.
 
-Load http://localhost:8000/ to access the app.
+Web site: http://localhost:8000/    
 REST example: http://localhost:8000/api/v1/data/sprocket/id/1
 
 ## Customizing
