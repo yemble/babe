@@ -1,0 +1,27 @@
+version: '2.1'
+
+services:
+
+    app:
+        build: .
+        volumes:
+            - './app:/opt/app'
+        environment:
+            - DB_HOST=db
+            - DB_NAME=babe_app
+            - DB_USER=app
+            - DB_PASS=aaaaaaaaaaaaaa
+            - DEBUG=1
+        ports:
+            - '8000:8000'
+        depends_on:
+            - db
+
+    db:
+        image: postgres:9
+        environment:
+            - POSTGRES_DB=babe_app
+            - POSTGRES_USER=app
+            - POSTGRES_PASSWORD=aaaaaaaaaaaaaa
+        volumes:
+            - ${PWD}/sql:/docker-entrypoint-initdb.d

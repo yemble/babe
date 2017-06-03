@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test template</title>
+		<link type="text/css" href="/include/styles.css"/>
+	</head>
+	<body>
+		<h1>Template page</h1>
+
+		<p>Query:</p>
+
+		<ul>
+		{% for k in request.args.keys() %}
+			<li>{{ k }} => {{ request.args.get(k) }}</li>
+		{% endfor %}
+		</ul>
+	</body>
+</html>
