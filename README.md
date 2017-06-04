@@ -30,3 +30,7 @@ REST example: http://localhost:8000/api/v1/data/sprocket/id/1
 * `app/api.py` has rest api handlers
 * Static files go in `app/static`
 * Template files go in `app/templates`
+
+## Production hosting
+
+*TODO*
