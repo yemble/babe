@@ -11,9 +11,11 @@ services:
             - DB_NAME=babe_app
             - DB_USER=app
             - DB_PASS=aaaaaaaaaaaaaa
+            #- HTTP_PORT=8000
             - DEBUG=1
         ports:
             - '8000:8000'
+        restart: always
         depends_on:
             - db
 
