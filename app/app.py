@@ -63,4 +63,4 @@ if __name__ == '__main__':
 	logging.basicConfig(format = '%(asctime)-15s %(levelname)s %(message)s', level = logging.DEBUG if debug else logging.INFO)
 
 	add_routes()
-	app.run(debug=debug, host='0.0.0.0', port=8000)
+	app.run(debug=debug, host='0.0.0.0', port=int(os.environ.get('HTTP_PORT', 8000)))
