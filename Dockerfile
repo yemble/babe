@@ -1,7 +1,7 @@
 # http://containertutorials.com/docker-compose/flask-simple-app.html
 #MAINTAINER Rajdeep Dua "dua_rajdeep@yahoo.com"
 
-FROM ubuntu:latest
+FROM python:2
 
 RUN apt-get update -y
 RUN apt-get install -y python-pip python-dev build-essential curl vim
@@ -14,5 +14,5 @@ RUN pip install -r requirements.txt
 EXPOSE 8000
 
 ENTRYPOINT ["python"]
-CMD ["app.py"]
+CMD ["./app/app.py"]
 
