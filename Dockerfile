@@ -6,13 +6,14 @@ FROM python:2
 RUN apt-get update -y
 RUN apt-get install -y python-pip python-dev build-essential curl vim
 
-COPY  . /opt/app
-WORKDIR /opt/app
+COPY  ./requirements.txt /tmp
+RUN pip install -r /tmp/requirements.txt
 
-RUN pip install -r requirements.txt
+COPY ./app /opt/app
+WORKDIR /opt/app
 
 EXPOSE 8000
 
 ENTRYPOINT ["python"]
-CMD ["./app/app.py"]
+CMD ["app.py"]
 
