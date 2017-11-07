@@ -33,14 +33,10 @@ def add_routes():
 	# PUT    /api/v1/data/<table>/col/<val>[/col/<val>]..
 	# POST   /api/v1/data/<table>
 
-	# Data: select & insert on all
-	app.add_url_rule('/api/v1/data/<table>',             'api_data_table',      api.data_handler, methods=['GET','POST'])
+	# Data: select on all
+	app.add_url_rule('/api/v1/data/<table>',             'api_data_table',      api.data_handler, methods=['GET'])
 	# Data: select, insert, update on all
 	app.add_url_rule('/api/v1/data/<table>/<path:path>', 'api_data_table_path', api.data_handler, methods=['GET','POST','PUT'])
-
-	# Data: delete on all (you probably don't want this!)
-	#app.add_url_rule('/api/v1/data/<table>/<path:path>', 'api_data_table_path_delete', api.data_handler, methods=['DELETE'])
-
 	# Data: example to allow delete on one table only
 	#app.add_url_rule('/api/v1/data/sprocket/<path:path>', 'api_data_sprocket_delete', api.data_handler, methods=['DELETE'], defaults={'table': 'sprocket'})
 
