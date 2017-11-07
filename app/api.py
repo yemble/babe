@@ -28,7 +28,7 @@ def data_handler(table, path=None):
 			}
 			return jsonify(res)
 
-		if request.method == 'DELETE':
+		if False and request.method == 'DELETE':
 			conds = _data_conditions(args)
 			deleted = session.delete(table, conds)
 			res = {
@@ -37,7 +37,7 @@ def data_handler(table, path=None):
 			}
 			return jsonify(res)
 			
-		if request.method == 'POST':
+		if False and request.method == 'PUT':
 			updated = session.update(table, conds, request.json)
 			res = {
 				'result': 'ok',
@@ -45,7 +45,7 @@ def data_handler(table, path=None):
 			}
 			return jsonify(res)
 
-		if request.method == 'POST':
+		if False and request.method == 'POST':
 			new_id = session.insert(table, request.json)
 			return redirect(_data_url(table, new_id), 302)
 
